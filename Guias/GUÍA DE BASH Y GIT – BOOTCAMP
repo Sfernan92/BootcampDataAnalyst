@@ -1,0 +1,654 @@
+
+# GUÍA DE BASH Y GIT – BOOTCAMP
+
+**Apuntes personales – La Liga del Dato**
+
+**Objetivo:** Aprender a utilizar Git Bash, gestionar archivos y carpetas, trabajar con Git y controlar las versiones de un proyecto.
+
+---
+
+# ÍNDICE
+
+1. Introducción a Bash
+2. Comandos básicos de Bash
+3. Crear, leer y modificar archivos
+4. Copiar, mover y eliminar archivos
+5. Introducción a Git
+6. Crear nuestro primer repositorio
+7. Configurar nuestra identidad en Git
+8. Modificar y guardar cambios con Git
+9. Leer las instrucciones de las puertas
+10. Chuleta rápida de comandos
+11. Lo aprendido en el Bootcamp
+12. Conceptos importantes que debo recordar
+
+---
+
+# 1. INTRODUCCIÓN A BASH
+
+## 1.1. ¿Qué es Bash?
+
+Bash es un intérprete de comandos que permite comunicarnos con el ordenador escribiendo instrucciones en una terminal.
+
+En lugar de utilizar el ratón para abrir carpetas, buscar archivos o crear documentos, podemos hacerlo mediante comandos.
+
+## 1.2. ¿Para qué sirve?
+
+- Crear y organizar carpetas.
+- Abrir y leer archivos.
+- Copiar y mover documentos.
+- Modificar archivos.
+- Ejecutar programas.
+- Automatizar tareas.
+- Trabajar con Git.
+
+**Git Bash:** es una aplicación para Windows que permite utilizar Bash y herramientas de Git.
+
+---
+
+# 2. COMANDOS BÁSICOS DE BASH
+
+Estos comandos sirven para movernos por las carpetas y trabajar con archivos.
+
+## 2.1. Tabla de comandos
+
+| COMANDO | ¿QUÉ HACE? |
+|---|---|
+| `pwd` | Muestra la ruta de la carpeta actual. |
+| `ls` | Muestra archivos y carpetas. |
+| `ls -la` | Muestra todos los archivos, incluidos los ocultos. |
+| `cd carpeta` | Entra en una carpeta. |
+| `cd ..` | Sube a la carpeta anterior. |
+| `cd ~` | Va a la carpeta personal del usuario. |
+| `mkdir` | Crea una carpeta nueva. |
+| `cat` | Muestra el contenido de un archivo. |
+| `printf` | Escribe texto. |
+| `clear` | Limpia la pantalla de la terminal. |
+
+## 2.2. Ejemplos prácticos
+
+**1. Saber dónde estamos:**
+
+```bash
+pwd
+```
+
+**2. Ver los archivos:**
+
+```bash
+ls
+```
+
+**3. Ver también los archivos ocultos:**
+
+```bash
+ls -la
+```
+
+**4. Entrar en una carpeta:**
+
+```bash
+cd sector_01
+```
+
+**5. Volver a la carpeta anterior:**
+
+```bash
+cd ..
+```
+
+**6. Crear una carpeta:**
+
+```bash
+mkdir mi-proyecto
+```
+
+**7. Limpiar la pantalla:**
+
+```bash
+clear
+```
+
+---
+
+# 3. CREAR, LEER Y MODIFICAR ARCHIVOS
+
+## 3.1. Leer un archivo con cat
+
+El comando `cat` permite mostrar el contenido de un archivo de texto directamente en la terminal.
+
+**Ejemplo:**
+
+```bash
+cat .ruta_secreta
+```
+
+Esto muestra el contenido del archivo llamado `.ruta_secreta`.
+
+## 3.2. Crear un archivo con printf
+
+Podemos crear un archivo y escribir texto dentro utilizando `printf`.
+
+**Ejemplo:**
+
+```bash
+printf 'Hola, estoy aprendiendo Bash.\n' > notas.txt
+```
+
+Esto crea el archivo `notas.txt` y escribe el texto dentro.
+
+## 3.3. Modificar un archivo desde la terminal
+
+Podemos sustituir todo el contenido de un archivo utilizando `>`.
+
+**Ejemplo:**
+
+```bash
+printf 'Este es el nuevo contenido.\n' > notas.txt
+```
+
+Si el archivo ya tenía información, esta será sustituida.
+
+## 3.4. Añadir contenido sin borrar lo anterior
+
+Para añadir texto al final de un archivo utilizamos `>>`.
+
+**Ejemplo:**
+
+```bash
+printf 'Esta es una nueva línea.\n' >> notas.txt
+```
+
+Esto añade una línea nueva sin eliminar el contenido anterior.
+
+## 3.5. Abrir un archivo para modificarlo
+
+Podemos utilizar un editor de texto desde Git Bash.
+
+Con Sublime Text instalado y el comando `subl` disponible:
+
+```bash
+subl notas.txt
+```
+
+Esto abre el archivo en Sublime Text para poder modificarlo.
+
+También podemos abrir Sublime Text desde el menú Inicio y buscar el archivo manualmente.
+
+---
+
+# 4. COPIAR, MOVER Y ELIMINAR ARCHIVOS
+
+Esta sección es especialmente importante para trabajar con las evidencias del Bootcamp.
+
+## 4.1. Copiar archivos
+
+Para copiar un archivo utilizamos `cp`.
+
+**Sintaxis:**
+
+```bash
+cp archivo_original archivo_copia
+```
+
+**Ejemplo:**
+
+```bash
+cp notas.txt notas_copia.txt
+```
+
+Esto crea una copia de `notas.txt` llamada `notas_copia.txt`.
+
+**Copiar un archivo a otra carpeta:**
+
+```bash
+cp notas.txt evidencias/
+```
+
+Esto copia `notas.txt` dentro de la carpeta `evidencias`.
+
+## 4.2. Copiar carpetas completas
+
+Para copiar una carpeta con todo su contenido utilizamos `cp -r`.
+
+**Ejemplo:**
+
+```bash
+cp -r proyecto proyecto_copia
+```
+
+Esto copia la carpeta `proyecto` y todo su contenido en otra carpeta llamada `proyecto_copia`.
+
+## 4.3. Mover archivos
+
+Para mover un archivo utilizamos `mv`.
+
+**Ejemplo:**
+
+```bash
+mv notas.txt evidencias/
+```
+
+Esto mueve `notas.txt` a la carpeta `evidencias`.
+
+## 4.4. Cambiar el nombre de un archivo
+
+También podemos utilizar `mv` para cambiar el nombre de un archivo.
+
+**Ejemplo:**
+
+```bash
+mv notas.txt apuntes.txt
+```
+
+Esto cambia el nombre de `notas.txt` a `apuntes.txt`.
+
+## 4.5. Eliminar archivos
+
+Para eliminar un archivo utilizamos `rm`.
+
+**Ejemplo:**
+
+```bash
+rm notas.txt
+```
+
+Esto elimina el archivo `notas.txt`.
+
+**IMPORTANTE:** Los archivos eliminados con `rm` normalmente no pasan por la papelera de reciclaje.
+
+## 4.6. Eliminar carpetas
+
+Para eliminar una carpeta vacía:
+
+```bash
+rmdir mi-carpeta
+```
+
+Para eliminar una carpeta y todo su contenido:
+
+```bash
+rm -r mi-carpeta
+```
+
+Utiliza estos comandos con cuidado porque pueden borrar información de forma permanente.
+
+---
+
+# 5. INTRODUCCIÓN A GIT
+
+## 5.1. ¿Qué es Git?
+
+Git es una herramienta que permite controlar los cambios que hacemos en los archivos de un proyecto.
+
+Permite guardar diferentes versiones y consultar su historial.
+
+## 5.2. ¿Qué es un repositorio?
+
+Un repositorio es una carpeta cuyo historial de cambios está controlado por Git.
+
+## 5.3. ¿Qué es un commit?
+
+Un commit es una versión guardada de los cambios que hemos preparado en nuestro proyecto.
+
+Es parecido a hacer una fotografía del estado del proyecto en un momento determinado.
+
+## 5.4. ¿Qué diferencia hay entre Git y GitHub?
+
+- **Git:** controla las versiones de los archivos.
+- **GitHub:** permite alojar y compartir repositorios en Internet.
+
+---
+
+# 6. CREAR NUESTRO PRIMER REPOSITORIO
+
+Estos son los pasos que hemos realizado para crear nuestro primer proyecto.
+
+## PASO 1. Crear una carpeta
+
+```bash
+mkdir mi-primer-repo
+```
+
+`mkdir` crea una carpeta nueva.
+
+## PASO 2. Entrar en la carpeta
+
+```bash
+cd mi-primer-repo
+```
+
+`cd` permite entrar en una carpeta.
+
+## PASO 3. Iniciar Git
+
+```bash
+git init -b main
+```
+
+- `git`: ejecuta una instrucción de Git.
+- `init`: inicializa un repositorio.
+- `-b main`: establece el nombre de la rama inicial como `main`.
+
+## PASO 4. Crear un archivo README.md
+
+```bash
+printf '# Mi primer repositorio\n\nAprenderé a explicar decisiones con datos.\n' > README.md
+```
+
+Significado:
+
+- `printf`: escribe texto.
+- `\n`: introduce un salto de línea.
+- `>`: guarda el contenido.
+- `README.md`: nombre del archivo.
+
+## PASO 5. Consultar el estado del proyecto
+
+```bash
+git status
+```
+
+Muestra qué archivos han cambiado, cuáles están preparados y cuáles todavía no están controlados por Git.
+
+## PASO 6. Preparar el archivo
+
+```bash
+git add README.md
+```
+
+Prepara el archivo para incluirlo en el siguiente commit.
+
+Este proceso se llama *staging*.
+
+## PASO 7. Guardar los cambios
+
+```bash
+git commit -m "Mi primer commit"
+```
+
+- `git commit`: guarda una versión de los cambios preparados.
+- `-m`: permite escribir un mensaje.
+- `"Mi primer commit"`: describe el cambio realizado.
+
+## PASO 8. Consultar el último commit
+
+```bash
+git log -1 --oneline
+```
+
+Muestra el último commit de forma resumida.
+
+## PASO 9. Volver a la carpeta anterior
+
+```bash
+cd ..
+```
+
+Permite subir un nivel en la estructura de carpetas.
+
+---
+
+# 7. CONFIGURAR NUESTRA IDENTIDAD EN GIT
+
+Git necesita saber quién realiza los cambios.
+
+## 7.1. Configurar el nombre
+
+```bash
+git config --global user.name "Tu Nombre"
+```
+
+Configura el nombre del usuario.
+
+## 7.2. Configurar el correo electrónico
+
+```bash
+git config --global user.email "tu-correo@gmail.com"
+```
+
+Configura el correo electrónico del usuario.
+
+## 7.3. Comprobar la configuración
+
+```bash
+git config --global --list
+```
+
+Muestra los datos de configuración.
+
+**¿Qué significa --global?**
+
+Significa que la configuración se aplica a todos los repositorios Git de ese ordenador.
+
+---
+
+# 8. MODIFICAR Y GUARDAR CAMBIOS CON GIT
+
+Una de las cosas más importantes de Git es poder registrar las modificaciones que hacemos en nuestros archivos.
+
+## 8.1. Consultar los cambios
+
+```bash
+git status
+```
+
+Muestra si hay archivos nuevos, modificados o preparados.
+
+## 8.2. Preparar un archivo modificado
+
+```bash
+git add README.md
+```
+
+Prepara los cambios de `README.md` para el siguiente commit.
+
+## 8.3. Preparar todos los cambios
+
+```bash
+git add .
+```
+
+Prepara los cambios del directorio actual y sus subcarpetas, excepto los archivos ignorados por Git.
+
+## 8.4. Guardar los cambios
+
+```bash
+git commit -m "Actualizo el README"
+```
+
+Guarda los cambios preparados en una nueva versión.
+
+## 8.5. Consultar el historial
+
+```bash
+git log --oneline
+```
+
+Muestra el historial de commits de forma resumida.
+
+## 8.6. Consultar las diferencias
+
+```bash
+git diff
+```
+
+Muestra los cambios realizados en archivos que todavía no se han preparado con `git add`.
+
+Para ver los cambios que ya están preparados:
+
+```bash
+git diff --staged
+```
+
+## 8.7. Ver los archivos controlados por Git
+
+```bash
+git ls-files
+```
+
+Muestra los archivos registrados en el índice de Git.
+
+## 8.8. Deshacer cambios
+
+Para descartar modificaciones no preparadas de un archivo:
+
+```bash
+git restore README.md
+```
+
+Este comando elimina las modificaciones locales no guardadas en un commit.
+
+Para quitar un archivo de la zona de preparación sin borrar sus cambios:
+
+```bash
+git restore --staged README.md
+```
+
+**IMPORTANTE:** Ten cuidado al utilizar `git restore`, porque puedes perder modificaciones que todavía no hayas guardado en un commit.
+
+---
+
+# 9. LEER LAS INSTRUCCIONES DE LAS PUERTAS
+
+Para abrir un archivo de instrucciones utilizamos `cat`.
+
+**Ejemplo:**
+
+```bash
+cat INSTRUCCIONES.md
+```
+
+Para consultar las pistas:
+
+```bash
+cat PISTA_1.md
+cat PISTA_2.md
+```
+
+Para consultar las instrucciones de una sala concreta podemos indicar su ruta:
+
+```bash
+cat salas/03-sublime/INSTRUCCIONES.md
+```
+
+---
+
+# 10. CHULETA RÁPIDA DE COMANDOS
+
+## 10.1. BASH – Carpetas y archivos
+
+| COMANDO | RECORDATORIO |
+|---|---|
+| `pwd` | ¿Dónde estoy? |
+| `ls` | ¿Qué hay aquí? |
+| `ls -la` | Ver también los ocultos. |
+| `cd carpeta` | Entrar en una carpeta. |
+| `cd ..` | Subir una carpeta. |
+| `mkdir` | Crear carpeta. |
+| `cat` | Leer archivo. |
+| `printf` | Escribir texto. |
+| `cp` | Copiar archivos. |
+| `cp -r` | Copiar carpetas. |
+| `mv` | Mover o renombrar. |
+| `rm` | Eliminar archivos. |
+| `rmdir` | Eliminar carpetas vacías. |
+| `clear` | Limpiar pantalla. |
+| `>` | Guardar o sustituir. |
+| `>>` | Añadir contenido. |
+
+## 10.2. GIT – Control de versiones
+
+| COMANDO | RECORDATORIO |
+|---|---|
+| `git init` | Iniciar repositorio. |
+| `git status` | Consultar estado. |
+| `git add` | Preparar cambios. |
+| `git add .` | Preparar todos los cambios. |
+| `git commit` | Guardar una versión. |
+| `git log` | Ver historial. |
+| `git diff` | Ver cambios pendientes de preparar. |
+| `git restore` | Descartar modificaciones no preparadas. |
+| `git config` | Configurar Git. |
+| `git ls-files` | Ver archivos registrados por Git. |
+
+---
+
+# 11. LO APRENDIDO EN EL BOOTCAMP
+
+## PUERTA 1 – BASH
+
+**Estado: COMPLETADA**
+
+Hemos aprendido a:
+
+- Explorar carpetas.
+- Encontrar archivos ocultos.
+- Leer archivos con `cat`.
+- Guardar evidencias con `>`.
+
+Código utilizado:
+
+```bash
+cat sector_01/archivo/.ruta_secreta > evidencias/01_bash.txt
+```
+
+Resultado: primera puerta desbloqueada.
+
+## PUERTA 2 – GIT
+
+**Estado: TRABAJO REALIZADO**
+
+Hemos aprendido a:
+
+- Crear un repositorio.
+- Inicializar Git.
+- Crear un archivo README.md.
+- Consultar el estado del proyecto.
+- Preparar cambios con `git add`.
+- Guardar versiones con `git commit`.
+- Consultar el historial.
+- Configurar nuestra identidad en Git.
+
+## PUERTA 3 – SUBLIME TEXT
+
+**Estado: EN CURSO**
+
+Hemos localizado la carpeta:
+
+```bash
+salas/03-sublime
+```
+
+La misión consiste en:
+
+1. Abrir Sublime Text.
+2. Crear `evidencias/bitacora.md`.
+3. Escribir un hallazgo de las dos primeras salas.
+4. Formular una pregunta real de análisis.
+5. Guardar el documento en UTF-8.
+6. Comprobarlo con `cat evidencias/bitacora.md`.
+7. Desbloquear la puerta con `bash desbloquear.sh 3`.
+
+---
+
+# 12. CONCEPTOS IMPORTANTES QUE DEBO RECORDAR
+
+1. Bash sirve para trabajar con archivos y carpetas desde la terminal.
+2. `cat` sirve para leer archivos.
+3. `>` guarda contenido y `>>` añade contenido.
+4. `cp` sirve para copiar archivos.
+5. `mv` sirve para mover o renombrar archivos.
+6. `rm` sirve para eliminar archivos.
+7. Git permite controlar las versiones de un proyecto.
+8. `git add` prepara los cambios.
+9. `git commit` guarda los cambios preparados.
+10. Git y GitHub no son lo mismo: Git controla versiones y GitHub permite alojar y compartir repositorios.
+
+---
+
+# FIN DE LA GUÍA – BASH Y GIT
+
+**Apuntes personales del Bootcamp – La Liga del Dato**
+
+*Documento abierto a futuras ampliaciones con las siguientes puertas.*
