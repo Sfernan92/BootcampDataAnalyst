@@ -1,0 +1,6 @@
+INFORME DE CIUDAD METRICA
+Operaciones totales: 24
+Completadas: 12
+Canceladas: 7
+Devueltas: 5
+Ingresos completados (EUR): 641.99
