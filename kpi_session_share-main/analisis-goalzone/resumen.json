@@ -1,0 +1,23 @@
+{
+  "fuente": "https://raw.githubusercontent.com/xrander/fitness_class_project/master/fitness_class_2212.csv",
+  "kpi": {
+    "reservas_elegibles": 1500,
+    "asistencias_confirmadas": 454,
+    "tasa_asistencia": 0.30266666666666664,
+    "tasa_ic95_inf": 0.27994594598175954,
+    "tasa_ic95_sup": 0.3263955360091387,
+    "relacion_estructural": "asistencias = reservas_elegibles × tasa_asistencia",
+    "unidad": "reserva",
+    "limitacion": "Proxy, no mide satisfacción ni usuarios recurrentes"
+  },
+  "calidad": {
+    "filas_origen": 1500,
+    "reservas_con_target_valido": 1500,
+    "reservas_sin_target_valido": 0,
+    "ids_duplicados": 0,
+    "nulos_antiguedad": 0,
+    "nulos_anticipacion": 0,
+    "nulos_categoria": 13,
+    "nulos_dia_normalizado": 0
+  }
+}

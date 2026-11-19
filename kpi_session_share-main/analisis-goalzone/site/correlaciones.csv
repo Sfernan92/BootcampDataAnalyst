@@ -1,0 +1,6 @@
+metrica,nombre,metodo,n,coeficiente,p_value,q_value_bh,significativo_fdr_5pct
+months_as_member,Antigüedad del socio,r punto-biserial,1500,0.4855262232752622,1.5010533219322794e-89,7.505266609661396e-89,True
+days_before_num,Antelación de reserva,r punto-biserial,1500,0.024068155733120076,0.35158800456161954,0.4394850057020244,False
+category,Categoría de clase,V de Cramér (sin signo),1487,0.043493510950351824,0.5896017415664843,0.5896017415664843,False
+time,Horario,V de Cramér (sin signo),1500,0.04984968386251237,0.05352388083824501,0.13380970209561252,False
+day_of_week_normalized,Día de la semana,V de Cramér (sin signo),1500,0.06807919697510577,0.32529358045713674,0.4394850057020244,False
