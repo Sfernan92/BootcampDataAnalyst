@@ -1,5 +1,5 @@
 📚 GUÍA COMPLETA DE GIT
-Chuleta de comandos – Proyecto Data Analyst
+Chuleta de comandos para proyectos de Data Analyst
 
 Guía de consulta rápida para trabajar con Git, controlar versiones, gestionar ramas y subir proyectos a GitHub.
 
@@ -14,6 +14,7 @@ Guía de consulta rápida para trabajar con Git, controlar versiones, gestionar 
 ☁️ Subir cambios a GitHub (push)
 🧠 Flujo completo de trabajo
 ⚠️ Comandos que debemos utilizar con cuidado
+🎯 Resumen rápido de comandos
 1. 🔍 CONSULTAR EL ESTADO DEL PROYECTO
 git status
 
@@ -41,7 +42,7 @@ git diff
 
 ¿Para qué sirve?
 
-Muestra las diferencias exactas dentro de los archivos que has modificado, pero que todavía no has preparado con git add.
+Muestra las diferencias exactas dentro de los archivos modificados que todavía no has preparado con git add.
 
 bash
 git diff
@@ -87,7 +88,7 @@ bash
 git diff HEAD~2 HEAD -- analisis.py
 
 
-📌 Conceptos importantes:
+Conceptos importantes:
 
 HEAD: commit actual.
 HEAD~1: commit anterior.
@@ -112,7 +113,7 @@ git add .
 
 ¿Para qué sirve?
 
-Prepara todos los cambios del directorio actual y sus subdirectorios.
+Prepara los cambios de todos los archivos del directorio actual y sus subdirectorios.
 
 bash
 git add .
@@ -133,7 +134,7 @@ git restore README.md
 
 ¿Para qué sirve?
 
-Descarta las modificaciones no preparadas de ese archivo y recupera su versión del área de preparación (o del último commit si no hay cambios preparados).
+Descarta las modificaciones no preparadas de ese archivo y recupera su versión del área de preparación o, si no hay cambios preparados, del último commit.
 
 bash
 git restore README.md
@@ -272,7 +273,7 @@ bash
 git switch -c mejora/descripcion
 
 
-📌 Diferencia entre los comandos:
+Diferencia entre los comandos:
 
 Comando	Función
 git branch nombre	Crea una rama.
@@ -324,16 +325,7 @@ En nuestro ejemplo:
 Rama que recibe los cambios: main.
 Rama que aporta los cambios: mejora/descripcion.
 
-⚠️ Recuerda escribir exactamente el nombre de la rama. Git distingue entre nombres diferentes, por ejemplo:
-
-bash
-git merge mejora/descripcion
-
-
-No es lo mismo que:
-
-bash
-git merge mejora/description
+⚠️ Recuerda escribir exactamente el nombre de la rama.
 
 8. ☁️ SUBIR CAMBIOS A GITHUB (PUSH)
 git push
@@ -366,7 +358,7 @@ git add = prepara los cambios.
 git commit = registra los cambios.
 git push = sube los commits al repositorio remoto.
 
-Si has creado una rama nueva y quieres publicarla por primera vez, puedes utilizar:
+Si has creado una rama nueva y quieres publicarla por primera vez:
 
 bash
 git push -u origin mejora/descripcion
@@ -407,45 +399,58 @@ git push
 
 Ejemplo práctico: queremos mejorar los gráficos de nuestro proyecto de visitas.
 
-1. Crear una rama nueva
+1. Crear una rama nueva.
+
 bash
 git branch mejora/graficos
 
-2. Cambiar a ella
+
+2. Cambiar a ella.
+
 bash
 git switch mejora/graficos
 
-3. Modificar los archivos
+
+3. Modificar los archivos.
 
 Trabajamos en nuestro archivo analisis.py.
 
-4. Preparar los cambios
+4. Preparar los cambios.
+
 bash
 git add .
 
-5. Crear un commit
+
+5. Crear un commit.
+
 bash
 git commit -m "Añado nuevos gráficos"
 
-6. Volver a main
+
+6. Volver a main.
+
 bash
 git switch main
 
-7. Fusionar las mejoras
+
+7. Fusionar las mejoras.
+
 bash
 git merge mejora/graficos
 
-8. Subir los cambios
+
+8. Subir los cambios.
+
 bash
 git push
 
-⚠️ 11. COMANDOS QUE DEBES UTILIZAR CON CUIDADO
+11. ⚠️ COMANDOS QUE DEBES UTILIZAR CON CUIDADO
 Comando	Precaución
 git restore archivo	Puede descartar modificaciones no preparadas.
 git restore --staged archivo	Quita los cambios del staging, pero los conserva en el archivo.
 git branch -d rama	Elimina una rama local.
 git merge rama	Puede generar conflictos si hay cambios incompatibles.
-🎯 12. RESUMEN RÁPIDO: TODOS LOS COMANDOS
+12. 🎯 RESUMEN RÁPIDO: TODOS LOS COMANDOS
 Necesidad	Comando
 Consultar estado	git status
 Ver cambios	git diff
@@ -483,4 +488,4 @@ git commit -m "Descripción del cambio"
 git push
 
 
-¡Con estos comandos tienes una base muy sólida para gestionar tus proyectos de Data Analyst con Git y GitHub! 🚀
+🚀 ¡Con estos comandos tienes una base sólida para gestionar tus proyectos de Data Analyst con Git y GitHub!
