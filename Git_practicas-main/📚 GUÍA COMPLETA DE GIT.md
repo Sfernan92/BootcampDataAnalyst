@@ -528,3 +528,162 @@ git push
 ```
 
 ¡Con esta chuleta tienes una buena base para gestionar tus proyectos de Data Analyst con Git y GitHub!
+
+
+---
+
+# ☁️ 13. CONECTAR UN PROYECTO LOCAL CON GITHUB
+
+**¿Para qué sirve?**
+
+Permite conectar un proyecto que tenemos en nuestro ordenador con un repositorio de GitHub y subirlo por primera vez.
+
+El proceso consta de cuatro pasos.
+
+## 1. Cambiar a la rama principal
+
+```bash
+git switch main
+```
+
+**¿Qué hace?**
+
+Nos cambia a la rama principal (`main`) para trabajar desde ella y subirla a GitHub.
+
+Podemos comprobar la rama actual con:
+
+```bash
+git branch
+```
+
+El asterisco `*` indica la rama en la que estamos trabajando.
+
+## 2. Conectar el proyecto con GitHub
+
+```bash
+git remote add origin https://github.com/USUARIO/visitas-bootcamp.git
+```
+
+**¿Qué hace?**
+
+Conecta nuestro proyecto local con un repositorio remoto de GitHub.
+
+**Significado:**
+
+- `git remote`: gestiona las conexiones con repositorios remotos.
+- `add`: añade una conexión nueva.
+- `origin`: nombre que damos a la conexión.
+- URL: dirección del repositorio de GitHub.
+
+⚠️ **IMPORTANTE:**
+
+Hay que sustituir `USUARIO` por nuestro nombre de usuario real de GitHub.
+
+Antes debemos crear un repositorio en GitHub llamado `visitas-bootcamp` y copiar su URL HTTPS.
+
+**Ejemplo:**
+
+```bash
+git remote add origin https://github.com/AulaData23/visitas-bootcamp.git
+```
+
+## 3. Comprobar la conexión
+
+```bash
+git remote -v
+```
+
+**¿Qué hace?**
+
+Muestra los repositorios remotos que tenemos conectados a nuestro proyecto.
+
+Ejemplo de resultado:
+
+```bash
+origin  https://github.com/AulaData23/visitas-bootcamp.git (fetch)
+origin  https://github.com/AulaData23/visitas-bootcamp.git (push)
+```
+
+**Significado:**
+
+- `origin`: nombre del repositorio remoto.
+- `fetch`: dirección desde la que podemos descargar información.
+- `push`: dirección a la que podemos subir información.
+
+💡 Sirve para comprobar que estamos conectados al repositorio correcto.
+
+## 4. Subir el proyecto a GitHub
+
+```bash
+git push -u origin main
+```
+
+**¿Qué hace?**
+
+Sube los commits de nuestra rama local `main` al repositorio remoto de GitHub.
+
+**Significado:**
+
+| Elemento | Función |
+|---|---|
+| `git push` | Sube los commits a GitHub. |
+| `-u` | Configura el seguimiento entre las ramas local y remota. |
+| `origin` | Indica el repositorio remoto. |
+| `main` | Indica la rama que queremos subir. |
+
+**¿Qué significa `-u`?**
+
+Establece una relación entre nuestra rama local `main` y la rama remota `origin/main`.
+
+Así, en los siguientes envíos normalmente podremos utilizar simplemente:
+
+```bash
+git push
+```
+
+Sin necesidad de escribir todo el comando.
+
+---
+
+## 🧠 RESUMEN DEL PROCESO
+
+| Orden | Comando | ¿Qué hace? |
+|---|---|---|
+| 1 | `git switch main` | Nos sitúa en la rama principal. |
+| 2 | `git remote add origin URL` | Conecta el proyecto con GitHub. |
+| 3 | `git remote -v` | Comprueba la conexión. |
+| 4 | `git push -u origin main` | Sube los commits a GitHub. |
+
+## 🚀 FLUJO COMPLETO DE CONEXIÓN
+
+Estos son los comandos que ejecutaremos en orden:
+
+```bash
+# 1. Cambiar a la rama principal
+git switch main
+
+# 2. Conectar el proyecto con GitHub
+git remote add origin https://github.com/USUARIO/visitas-bootcamp.git
+
+# 3. Comprobar la conexión
+git remote -v
+
+# 4. Subir los commits a GitHub
+git push -u origin main
+```
+
+⚠️ **RECUERDA ANTES DE SUBIR:**
+
+- Tener creado el repositorio en GitHub.
+- Sustituir `USUARIO` por nuestro usuario real.
+- Comprobar que estamos en la rama `main`.
+- Tener al menos un commit creado.
+- Comprobar que la URL del repositorio es correcta.
+
+💡 **IDEA CLAVE:**
+
+`git remote add origin` conecta nuestro proyecto local con GitHub, mientras que `git push` envía los commits al repositorio remoto.
+
+¡Así podemos publicar nuestros proyectos de análisis de datos en GitHub! 🚀
+
+
